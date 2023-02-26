@@ -55,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         pageController.animateToPage(
           // ➍ 페이지 변경
           nextPage,
+          // duration: Duration(milliseconds: 10),
           duration: Duration(milliseconds: 500),
           curve: Curves.ease,
         );
@@ -81,8 +82,23 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         )
             .toList(),
+        onPageChanged: _onPageViewChange,
       ),
+      onDrawerChanged: _onDrawerChanged(true),
     );
   }
 }
 
+/// PageView 변경시 실행.
+_onPageViewChange(int page) {
+  print("PageView _onPageViewChange Current Page : " + page.toString());
+  // int previousPage = page;
+  // if(page != 0) previousPage--;
+  // else previousPage = 2;
+  // print("Previous page: $previousPage");
+}
+
+/// Scaffold 함수 호출시 실행.
+_onDrawerChanged(bool flag) {
+  print("Scaffold _onDrawerChanged : ");
+}

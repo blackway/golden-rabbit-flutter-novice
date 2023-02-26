@@ -21,12 +21,12 @@ Chapter-08
 	    1. StatlessWidget은 상태 관리가 필요 없을 때 사용합니다. 하나의 클래스로 이루어졌고, 
 	    build() 함수는 생명주기 동안 단 한 번만 실행 됩니다.
 	    2. StatefulWidget은 상태 관리가 필요할 때 사용합니다. StatefulWidget 클랙스와 State 클래스로
-	    이루어졌고 생명주기 동안 build() 함수가 여러번 실행될 수 있습니다.
-	    3. PageView 위엣을 이용하면 스와이프로 페이지를 변경하는 UI를 쉽게 구현할 수 있습니다.
+	    이루어졌고 생명주기 동안 build() 함수가 여러번 실행될 수 있습니다.(샐행 해보니 그런거 같지는 않음)
+	    3. PageView 위젯을 이용하면 스와이프로 페이지를 변경하는 UI를 쉽게 구현할 수 있습니다.
 	    4. Timer.periodic()을 이용해서 PageView를 조작할 수 있습니다.
 	    5. PageController를 사용해서  PageView를 조작할 수 있습니다.
 	    6. StatefulWidget의 initState()에 코드를 작성하면 State가 생성될 때 딱 한 번만 실행합니다.
-	    7. SystemCrome.setSystemUIOverlayStyle을 사용해서 상태바의 색상을 흰색이나 검정색으로 
+	    7. SystemChrome.setSystemUIOverlayStyle을 사용해서 상태바의 색상을 흰색이나 검정색으로 
 	    변경할 수 있습니다.
 
 
@@ -41,7 +41,12 @@ Chapter-08
 	    StatefulWidget
 	    	상태 있는 위젯
 	    	StatefulWidget 생성자() -> createState() 
-	    	한번 생성하고 나서 속성을 변경할 수 있다.	    	
+	    	한번 생기기하고 나서 속성을 변경할 수 있다.	    	
+## StatefulWidget 생성자 매개변수가 변경됐을 때 생명주기		
+![image](./asset/img/study-2023-02-26 235328.png)
+
+## State 자체적으로 build()를 재실행할 때 생명 주기	
+![image](./asset/img/study-2023-02-26 235432.png)
 
 	    8.1.2 Timer
 
