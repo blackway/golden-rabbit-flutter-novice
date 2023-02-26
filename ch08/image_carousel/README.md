@@ -42,10 +42,12 @@ Chapter-08
 	    	상태 있는 위젯
 	    	StatefulWidget 생성자() -> createState() 
 	    	한번 생기기하고 나서 속성을 변경할 수 있다.	    	
-## StatefulWidget 생성자 매개변수가 변경됐을 때 생명주기		
+## StatefulWidget 생성자 매개변수가 변경됐을 때 생명주기
+
 ![image](./asset/img/study-2023-02-26 235328.png)
 
-## State 자체적으로 build()를 재실행할 때 생명 주기	
+## State 자체적으로 build()를 재실행할 때 생명 주기
+
 ![image](./asset/img/study-2023-02-26 235432.png)
 
 	    8.1.2 Timer
