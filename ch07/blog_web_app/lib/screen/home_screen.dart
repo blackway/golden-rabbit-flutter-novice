@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:consolelog/consolelog.dart';
 
 class HomeScreen extends StatelessWidget {
   WebViewController? controller; // ❶ 컨트롤러 변수 생성
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             // ➋ 눌렀을 때 콜백 함수 설정
             onPressed: () {
               if (controller != null) {
-
+                console.log('You are awesome!');
                 // ➌ 웹뷰에서 보여줄 사이트 실행하기
                 controller!.loadUrl('https://blog.codefactory.ai');
               }
