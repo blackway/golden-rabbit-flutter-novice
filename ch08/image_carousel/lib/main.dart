@@ -93,10 +93,6 @@ class _HomeScreenState extends State<HomeScreen> {
 /// PageView 변경시 실행.
 _onPageViewChange(int page) {
   print("PageView _onPageViewChange Current Page : " + page.toString());
-  // int previousPage = page;
-  // if(page != 0) previousPage--;
-  // else previousPage = 2;
-  // print("Previous page: $previousPage");
 }
 
 /// Scaffold 함수 호출시 실행.
