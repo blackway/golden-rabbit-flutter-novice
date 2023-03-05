@@ -37,6 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
         // int? nextPage = pageController.page?.toInt();
         // ? 이면 null값을 가질 수 있다.
         int? nextPage = pageController.page?.toInt();
+        // double nextPageDb = (pageController.page == null) ? 0.toDouble() : pageController.page??;
+        // int nextPage = nextPageDb.toInt();
 
         print('실행2! nextPage : $nextPage');
 
