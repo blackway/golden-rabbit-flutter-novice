@@ -22,26 +22,27 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget renderEmpty(){  // ➌ 동영상 선택 전 보여줄 위젯
+  Widget renderEmpty() {
+    // ➌ 동영상 선택 전 보여줄 위젯
     return Container(
       width: MediaQuery.of(context).size.width, // 넓이 최대로 늘려주기
       decoration: getBoxDecoration(),
       child: Column(
-
         // 위젯들 가운데 정렬
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _Logo(
             onTap: onNewVideoPressed,
-          ),  // 로고 이미지
+          ), // 로고 이미지
           SizedBox(height: 30.0),
-          _AppName(),  // 앱 이름
+          // _AppName(),  // 앱 이름
         ],
       ),
     );
   }
 
-  void onNewVideoPressed() async {  // ➋ 이미지 선택하는 기능을 구현한 함수
+  void onNewVideoPressed() async {
+    // ➋ 이미지 선택하는 기능을 구현한 함수
     final video = await ImagePicker().pickVideo(
       source: ImageSource.gallery,
     );
@@ -55,7 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   BoxDecoration getBoxDecoration() {
     return BoxDecoration(
-      gradient: LinearGradient(  // ➋ 그라데이션으로 색상 적용하기
+      gradient: LinearGradient(
+        // ➋ 그라데이션으로 색상 적용하기
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
@@ -66,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget renderVideo(){
+  Widget renderVideo() {
     return Center(
       child: CustomVideoPlayer(
         video: video!, // ➋ 선택된 동영상 입력해주기
@@ -76,7 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class _Logo extends StatelessWidget { // 로고를 보여줄 위젯
+class _Logo extends StatelessWidget {
+  // 로고를 보여줄 위젯
   final GestureTapCallback onTap;
 
   const _Logo({
@@ -87,7 +90,7 @@ class _Logo extends StatelessWidget { // 로고를 보여줄 위젯
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,  // ➌ 상위 위젯으로부터 탭 콜백받기
+      onTap: onTap, // ➌ 상위 위젯으로부터 탭 콜백받기
       child: Image.asset(
         'asset/img/logo.png',
       ),
@@ -95,7 +98,8 @@ class _Logo extends StatelessWidget { // 로고를 보여줄 위젯
   }
 }
 
-class _AppName extends StatelessWidget { // 앱 제목을 보여줄 위젯
+class _AppName extends StatelessWidget {
+  // 앱 제목을 보여줄 위젯
   const _AppName({Key? key}) : super(key: key);
 
   @override
@@ -107,7 +111,7 @@ class _AppName extends StatelessWidget { // 앱 제목을 보여줄 위젯
     );
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,  // 글자 가운데 정렬
+      mainAxisAlignment: MainAxisAlignment.center, // 글자 가운데 정렬
       children: [
         Text(
           'VIDEO',
@@ -116,7 +120,6 @@ class _AppName extends StatelessWidget { // 앱 제목을 보여줄 위젯
         Text(
           'PLAYER',
           style: textStyle.copyWith(
-
             // ➊ textStyle에서 두께만 700으로 변경
             fontWeight: FontWeight.w700,
           ),

@@ -31,18 +31,6 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{ 
     );
   }
 
-  void onPhoneShake() {  // ➎ 감지 후 실행할 함수
-    final rand = new Random();
-
-    setState(() {
-      number = rand.nextInt(5) + 1;
-    });
-  }
-
-  tabListener() {  // ➋ listener로 사용할 함수
-    setState(() {});
-  }
-
   @override
   dispose(){
     controller!.removeListener(tabListener); // ➌ listener에 등록한 함수 등록 취소
@@ -61,6 +49,18 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{ 
       // ➋ 아래 탭 네비게이션을 구현하는 매개변수
       bottomNavigationBar: renderBottomNavigation(),
     );
+  }
+
+  void onPhoneShake() {  // ➎ 감지 후 실행할 함수
+    final rand = new Random();
+
+    setState(() {
+      number = rand.nextInt(5) + 1;
+    });
+  }
+
+  tabListener() {  // ➋ listener로 사용할 함수
+    setState(() {});
   }
 
   List<Widget> renderChildren(){
